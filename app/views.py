@@ -7,3 +7,14 @@ def index(request):
     return render(request, 'app/index.html', {
         'title': 'Latest'
     })
+
+
+"""DEMO HOMEPAGES FOR REVIEW"""
+
+from django.views import generic
+
+class TESTER_homea(generic.TemplateView):
+    template_name = "app/demeHomepages/home_a.html"
+
+
+
