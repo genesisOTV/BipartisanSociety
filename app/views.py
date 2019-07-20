@@ -14,7 +14,7 @@ def index(request):
 from django.views import generic
 
 class TESTER_homea(generic.TemplateView):
-    template_name = "app/demeHomepages/home_a.html"
+    template_name = "app/demoHomepages/home_a.html"
 
 
 
