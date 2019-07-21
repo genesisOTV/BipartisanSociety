@@ -9,14 +9,66 @@
     <title>The Bipartisan Society</title>
 
     <style>
+
+        .navButton{
+          height: 2vw;
+          width: 3vw;
+          position: relative;
+          top: 2vw;
+          left: 1.5vw;
+          background-color: transparent;
+          border: none;
+          color: black;
+          text-align: center;
+          text-decoration: none;
+          display: block;
+          font-size: 16px;
+          cursor: pointer;
+          z-index: 1;
+        }
+
+        .navFade{
+          height: 100%;
+          width: 2vw;
+          position: fixed;
+          top: 0;
+          z-index: 0;
+          background-color: #EEEEEE;
+          background-image: linear-gradient(to right, white, white);
+        }
         .sidebar{
           height: 100%;
-          width: 14vw;
+          width: 0;
           position: fixed;
           z-index: 1;
           background-color: #EEEEEE;
           top: 0;
 
+        }
+        .navContainer{
+          height: 95%;
+          width: inherit;
+          position: fixed;
+          z-index: 1;
+          background-color: #EEEEEE;
+          bottom: 0;
+        }
+        .navContainer a{
+          height: 3vw;
+          width: inherit;
+          position: fixed;
+          z-index: 2;
+          display: block;
+          background-color: #EEEEEE;
+          color: black;
+          padding-top: 1vw;
+          text-align: center;
+          font-size: 18;
+          font-family: arial;
+          overflow-x: hidden;
+        }
+        .navContainer a:hover{
+          color: #678af5;
         }
 
         .trendTabContainer{
@@ -90,11 +142,26 @@
 
         }
     </style>
+    <script>
+        function navFadeIn(){
+            //console.log("ran");
+            document.getElementById("navFade").style.backgroundImage = "linear-gradient(to right, #bababa, white)";
+        }
+        function navFadeOut(){
+            //console.log("ran");
+            document.getElementById("navFade").style.backgroundImage = "linear-gradient(to right, white, white)";
+        }
+    </script>
 </head>
 <body>
 
+    <button class="navButton" onmouseover="navFadeIn()" onmouseout="navFadeOut()"><font size="8">&#187;</font></button>
+    <div class="navFade" id="navFade"></div>
+
     <div id="nav" class="sidebar">
-      
+        <div class="navContainer">
+            <a id="tester" href="{% url 'demoIndexA' %}">Longer Title</a>
+        </div>
     </div>
 
     <div id="newArticles" class="trendTabContainer">
